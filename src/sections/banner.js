@@ -78,6 +78,8 @@ const styles = {
       img: {
         position: 'relative',
         height: [230, 'auto'],
+        maxWidth: '600px',
+        marginBottom: '5rem',
       },
     },
   },
