@@ -39,7 +39,7 @@ export default function MobileDrawer() {
       }
       open={isDrawerOpen}
       toggleHandler={() => setIsDrawerOpen((previousState) => !previousState)}
-      closeButton={<IoMdClose size="24px" color="#000000" />}
+      closeButton={<IoMdClose size="24px" />}
       drawerStyle={styles.drawer}
       closeButtonStyle={styles.close}>
       <Scrollbars autoHide>
@@ -94,13 +94,15 @@ const styles = {
   drawer: {
     width: '100%',
     height: '100%',
-    backgroundColor: 'dark',
+    backgroundColor: '#000',
+    color: '#fff',
   },
 
   close: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    color: '#fff',
     position: 'absolute',
     top: '25px',
     right: '30px',
@@ -125,16 +127,16 @@ const styles = {
     a: {
       fontSize: '16px',
       fontWeight: '500',
-      color: 'text_white',
+      color: '#fff',
       py: '15px',
       cursor: 'pointer',
       borderBottom: '1px solid #e8e5e5',
       transition: 'all 0.25s',
       '&:hover': {
-        color: 'secondary',
+        color: 'primary',
       },
       '&.active': {
-        color: 'secondary',
+        color: 'primary',
       },
     },
   },
@@ -157,7 +159,7 @@ const styles = {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: 'text',
+      color: '#fff',
       fontSize: 14,
       mr: '15px',
       transition: 'all 0.25s',
@@ -166,7 +168,7 @@ const styles = {
         mr: '0',
       },
       '&:hover': {
-        color: 'secondary',
+        color: 'primary',
       },
     },
   },
