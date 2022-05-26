@@ -9,18 +9,17 @@ export default function Banner() {
   return (
     <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
-        <Box sx={styles.banner.contentBox}>
-          <Heading as="h1" variant="heroPrimary">
-            Top Quality Digital Products to Explore
-          </Heading>
-          <Text as="p" variant="heroSecondary">
-            Check out our website to find great software products and deals!
-          </Text>
-          <Button variant="primary">Explore</Button>
+        <Box sx={styles.banner.imageBox}>
+          <Image src={BannerImg} alt="ADS Full Colour Logo" />
         </Box>
 
-        <Box sx={styles.banner.imageBox}>
-          <Image src={BannerImg} alt="Product Example" />
+        <Box sx={styles.banner.contentBox}>
+          <Heading as="h1" variant="heroPrimary">
+            Class Leading Debt Solutions Live Here
+          </Heading>
+          <Text as="p" variant="heroSecondary">
+            Take a look at our website to find out why we're the debt solutions company to work with!
+          </Text>
         </Box>
       </Container>
     </section>
@@ -29,7 +28,7 @@ export default function Banner() {
 
 const styles = {
   banner: {
-    pt: ['140px', '145px', '155px', '170px', null, null, '180px', '215px'],
+    pt: ['50px', '60px', '70px', '75px', null, null, '80px', '85px'],
     pb: [2, null, 0, null, 2, 0, null, 5],
     position: 'relative',
     zIndex: 2,
@@ -78,7 +77,7 @@ const styles = {
       mb: [0, null, -6, null, null, '-40px', null, -3],
       img: {
         position: 'relative',
-        height: [245, 'auto'],
+        height: [230, 'auto'],
       },
     },
   },
