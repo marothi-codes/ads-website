@@ -4,6 +4,7 @@ import SectionHeader from 'components/section-header';
 import Rating from 'components/rating';
 import ButtonGroup from 'components/button-group';
 import Carousel from 'react-multi-carousel';
+import theme from 'theme';
 
 import Avatar1 from 'assets/testimonial/avatar1.png';
 import Avatar2 from 'assets/testimonial/avatar2.png';
@@ -103,6 +104,9 @@ export default function TestimonialCard() {
   return (
     <section id="testimonial" sx={{ variant: 'section.testimonial' }}>
       <Container css={{ textAlign: 'center' }}>
+        <hr sx={theme.styles.hr} />
+        <br />
+        <br />
         <SectionHeader slogan="What our Clients have to say" title="Testimonials" />
       </Container>
       <Box sx={styles.carouselWrapper}>

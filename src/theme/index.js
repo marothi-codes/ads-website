@@ -82,7 +82,7 @@ export default {
       overflow: 'hidden',
     },
     testimonial: {
-      pt: [8, null, 8, '70px', null, 8, null, '145px'],
+      pt: [2, null, 4, '30px', null, 6, null, '115px'],
       pb: ['90px', null, 9, null, null, 10, null, '190px'],
       overflow: 'hidden',
     },
@@ -91,7 +91,7 @@ export default {
     },
     team: {
       pt: [4, null, 6, null, null, 8, null, '120px'],
-      pb: ['90px', null, 9, null, null, 10, null, '180px'],
+      pb: ['10px', null, 4, null, null, 5, null, '90px'],
     },
   },
   sectionHeader: {
