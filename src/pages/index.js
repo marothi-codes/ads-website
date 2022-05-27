@@ -8,26 +8,23 @@ import Banner from '../sections/banner';
 import Services from '../sections/services';
 import AboutSection from '../sections/about-section';
 import WhyUs from '../sections/why-us';
-import CoreFeature from '../sections/core-feature';
-import WorkFlow from '../sections/workflow';
-import Package from '../sections/package';
+import Process from '../sections/process';
 import TeamSection from '../sections/team-section';
 import TestimonialCard from '../sections/testimonial';
 
 export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>
-        <Layout>
-          <SEO title="Amanzunza Debt Solutions (Pty) Ltd" />
-          <Banner />
-          <AboutSection />
-          <Services />
-          <WhyUs />
-          <WorkFlow />
-          <Package />
-          <TeamSection />
-          <TestimonialCard />
-        </Layout>
+      <Layout>
+        <SEO title="Amanzunza Debt Solutions (Pty) Ltd" />
+        <Banner />
+        <AboutSection />
+        <Services />
+        <WhyUs />
+        <Process />
+        <TeamSection />
+        <TestimonialCard />
+      </Layout>
     </ThemeProvider>
   );
 }

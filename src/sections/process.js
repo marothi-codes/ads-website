@@ -11,32 +11,36 @@ const data = [
   {
     id: 1,
     title: 'Set disbursement Instructions',
-    text: 'Get your blood tests delivered at home collect a sample from the your blood tests.',
+    text:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae aut quas, tempora recusandae illo, similique iste sed esse, iure perferendis dolorum doloribus quisquam repellat natus. Minus rem autem odit numquam.',
   },
   {
     id: 2,
     title: 'Assembly retrieves funds from your account',
-    text: 'Get your blood tests delivered at home collect a sample from the your blood tests.',
+    text:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae aut quas, tempora recusandae illo, similique iste sed esse, iure perferendis dolorum doloribus quisquam repellat natus. Minus rem autem odit numquam.',
   },
   {
     id: 3,
     title: 'Assembly initiates disbursement',
-    text: 'Get your blood tests delivered at home collect a sample from the your blood tests.',
+    text:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae aut quas, tempora recusandae illo, similique iste sed esse, iure perferendis dolorum doloribus quisquam repellat natus. Minus rem autem odit numquam.',
   },
   {
     id: 4,
     title: 'Customer receives funds payment',
-    text: 'Get your blood tests delivered at home collect a sample from the your blood tests.',
+    text:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae aut quas, tempora recusandae illo, similique iste sed esse, iure perferendis dolorum doloribus quisquam repellat natus. Minus rem autem odit numquam.',
   },
 ];
 
-export default function WorkFlow() {
+export default function Process() {
   return (
-    <section sx={styles.workflow}>
+    <section id="process" sx={styles.process}>
       <Container>
         <SectionHeader
-          title="Understand Our Workflow"
-          slogan="GET INSIGHT INTO OUR ULTRA EFFICIENT WORKFLOW"
+          title="Debt Review Process"
+          slogan="GET INSIGHT INTO THE DEBT REVIEW PROCESS"
           isWhite={true}
         />
 
@@ -57,7 +61,7 @@ export default function WorkFlow() {
 }
 
 const styles = {
-  workflow: {
+  process: {
     backgroundColor: 'primary',
     backgroundImage: `url(${PatternBG})`,
     backgroundRepeat: `no-repeat`,
