@@ -20,6 +20,10 @@ export default [
     label: 'Process',
   },
   {
+    path: 'team',
+    label: 'Team',
+  },
+  {
     path: 'testimonial',
     label: 'Testimonials',
   },

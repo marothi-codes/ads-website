@@ -25,15 +25,7 @@ export default {
       },
     },
   },
-  breakpoints: [
-    '480px',
-    '640px',
-    '768px',
-    '1024px',
-    '1220px',
-    '1366px',
-    '1620px',
-  ],
+  breakpoints: ['480px', '640px', '768px', '1024px', '1220px', '1366px', '1620px'],
   fonts: {
     body: "'DM Sans', sans-serif",
     heading: "'DM Sans', sans-serif",
@@ -57,16 +49,7 @@ export default {
   // variants can use custom, user-defined names
   layout: {
     container: {
-      maxWidth: [
-        '100%',
-        null,
-        null,
-        '780px',
-        '1020px',
-        '1200px',
-        null,
-        '1310px',
-      ],
+      maxWidth: ['100%', null, null, '780px', '1020px', '1200px', null, '1310px'],
       px: [4, 6],
     },
     header: {
@@ -106,8 +89,8 @@ export default {
     about: {
       pb: ['10px', null, 9, null, null, 10, null, '10px'],
     },
-    pricing: {
-      pt: [8, null, 9, null, null, 10, null, '180px'],
+    team: {
+      pt: [4, null, 6, null, null, 8, null, '120px'],
       pb: ['90px', null, 9, null, null, 10, null, '180px'],
     },
   },
@@ -150,16 +133,7 @@ export default {
     },
     heroPrimary: {
       color: 'heading',
-      fontSize: [
-        '32px',
-        '36px',
-        '42px',
-        '40px',
-        '42px',
-        '52px',
-        '58px',
-        '66px',
-      ],
+      fontSize: ['32px', '36px', '42px', '40px', '42px', '52px', '58px', '66px'],
       lineHeight: [1.3, null, null, null, null, 1.2],
       fontWeight: 700,
       mb: [4, null, null, null, null, 5],

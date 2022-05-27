@@ -179,9 +179,9 @@ const data = [
 
 export default function TeamSection() {
   return (
-    <section>
+    <section id="team" sx={{ variant: 'section.team' }}>
       <Container>
-        <SectionHeader slogan="Our Team" title="Qualified Professionals at Your Service" />
+        <SectionHeader slogan="Qualified Professionals at Your Service" title="Amanzunza Team" />
 
         <Grid sx={styles.grid}>
           {data.map((item) => (
