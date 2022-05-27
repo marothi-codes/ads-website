@@ -7,7 +7,7 @@ import Layout from 'components/layout';
 import Banner from '../sections/banner';
 import Services from '../sections/services';
 import AboutSection from '../sections/about-section';
-import Feature from '../sections/feature';
+import WhyUs from '../sections/why-us';
 import CoreFeature from '../sections/core-feature';
 import WorkFlow from '../sections/workflow';
 import Package from '../sections/package';
@@ -22,8 +22,7 @@ export default function IndexPage() {
           <Banner />
           <AboutSection />
           <Services />
-          <Feature />
-          <CoreFeature />
+          <WhyUs />
           <WorkFlow />
           <Package />
           <TeamSection />

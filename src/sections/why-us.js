@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui';
 import { Container, Grid } from 'theme-ui';
 import SectionHeader from 'components/section-header';
 import FeatureCard from 'components/feature-card.js';
+import theme from 'theme';
 import Performance from 'assets/feature/performance.svg';
 import Partnership from 'assets/feature/partnership.svg';
 import Subscription from 'assets/feature/subscription.svg';
@@ -13,25 +14,25 @@ const data = [
     id: 1,
     imgSrc: Performance,
     altText: 'Fast Performance',
-    title: 'Fast Performance',
+    title: 'Experienced Team',
     text:
-      "Let's just get this out of the way - there will always be a kit version of Edu flow. Paid subscriptions allow us to continue helping learners around the world.",
+      'It ionsequat dolortis molor duis, hendrem mod. Adionsequat prat, molore re adignibh, dolutatueros, feugiat.',
   },
   {
     id: 2,
     imgSrc: Partnership,
     altText: 'Pro Subscription',
-    title: 'Pro Subscription',
+    title: 'Timeous Service Delivery',
     text:
-      "We believe it's important for everyone to have access to software - especially when it comes to digital learning be navigated by keyboard and screen readers.",
+      'Ver velestis lortie quis, quat essequating vullan ea, uismodolor quamcommy erit vullutat. Nummodolor, ispum unt commy alis iurerosto modip, an lam dolorer ril se.',
   },
   {
     id: 3,
     imgSrc: Subscription,
     altText: 'Partnership deal',
-    title: 'Partnership deal',
+    title: 'Maximal Transparency',
     text:
-      "Let's just get this out of the way - there will always be a kit version of Edu flow. Paid subscriptions allow us to continue helping learners around the world.",
+      'Essequating nonsecte ibh ullamcommy nos veliquamcon laore iusto exeraessit rat. Quip atem voloreetum ver ril dion conse molent niatuero, facillametum.',
   },
   {
     id: 4,
@@ -39,15 +40,19 @@ const data = [
     altText: 'Customer Support',
     title: 'Customer Support',
     text:
-      "We believe it's important for everyone to have access to software - especially when it comes to digital learning be navigated by keyboard and screen readers.",
+      'Vendiamet it tin feugiat eros irillamet lummy eui vullut molum vullam. Lor alit ate lutpat vullan minisi iurem feugiam verciduisi conulputat voloreetum velit.',
   },
 ];
 
-export default function Feature() {
+export default function WhyUs() {
   return (
-    <section sx={{ variant: 'section.feature' }}>
+    <section id="why-us" sx={{ variant: 'section.whyUs' }}>
       <Container>
-        <SectionHeader slogan="Quality Features" title="Amazing Useful Software" />
+        <hr sx={theme.styles.hr} />
+        <br />
+        <br />
+
+        <SectionHeader slogan="BEST IN THE BUSINESS" title="Why Work with ADS" />
 
         <Grid sx={styles.grid}>
           {data.map((item) => (
