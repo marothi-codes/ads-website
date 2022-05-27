@@ -27,6 +27,7 @@ const styles = {
     ml: ['auto', null, '-13px'],
     mb: -2,
     width: ['80px', null, null, '90px', null, 'auto'],
+    textAlign: 'center',
   },
   wrapper: {
     width: '100%',

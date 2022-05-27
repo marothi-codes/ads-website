@@ -5,7 +5,7 @@ import theme from 'theme';
 import SEO from 'components/seo';
 import Layout from 'components/layout';
 import Banner from '../sections/banner';
-import KeyFeature from '../sections/key-feature';
+import Services from '../sections/services';
 import AboutSection from '../sections/about-section';
 import Feature from '../sections/feature';
 import CoreFeature from '../sections/core-feature';
@@ -21,7 +21,7 @@ export default function IndexPage() {
           <SEO title="Amanzunza Debt Solutions (Pty) Ltd" />
           <Banner />
           <AboutSection />
-          <KeyFeature />
+          <Services />
           <Feature />
           <CoreFeature />
           <WorkFlow />

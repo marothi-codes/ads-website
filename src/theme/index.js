@@ -84,8 +84,8 @@ export default {
     main: {},
   },
   section: {
-    keyFeature: {
-      pt: [8, null, 9, null, null, 10],
+    services: {
+      pt: [2, null, 2, null, null, 2],
       pb: ['90px', null, 9, null, null, 10, null, '165px'],
     },
     feature: {
@@ -104,7 +104,7 @@ export default {
       overflow: 'hidden',
     },
     about: {
-      pb: ['90px', null, 9, null, null, 10, null, '150px'],
+      pb: ['10px', null, 9, null, null, 10, null, '10px'],
     },
     pricing: {
       pt: [8, null, 9, null, null, 10, null, '180px'],
