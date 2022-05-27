@@ -10,7 +10,7 @@ export default function Footer() {
       <Container>
         <Box sx={styles.footer.footerBottomArea}>
           <Link path="/">
-            <Image src={FooterLogo} alt="Footer Logo" />
+            <Image src={FooterLogo} width={120} alt="Footer Logo" />
           </Link>
           <Box sx={styles.footer.menus}>
             <nav>

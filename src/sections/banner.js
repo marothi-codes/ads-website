@@ -18,7 +18,8 @@ export default function Banner() {
             Class Leading Debt Solutions Live Here
           </Heading>
           <Text as="p" variant="heroSecondary">
-            Take a look at our website to find out why we're the debt solutions company to work with!
+            <br />
+            Scroll below to find out why!
           </Text>
         </Box>
       </Container>

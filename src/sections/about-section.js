@@ -7,35 +7,15 @@ import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
 
 import ServiceThumb from 'assets/service-thumb.png';
-import shapePattern from 'assets/shape-pattern1.png';
 
-import Smart from 'assets/services/smart.svg';
-import Secure from 'assets/services/secure.svg';
+import theme from 'theme';
 
 const data = {
-  subTitle: 'our services',
-  title: 'Business Goals Achieved with Design',
-  features: [
-    {
-      id: 1,
-      imgSrc: Smart,
-      altText: 'Smart Features',
-      title: 'Smart Features',
-      text:
-        'Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.',
-    },
-    {
-      id: 2,
-      imgSrc: Secure,
-      altText: 'Secure Contents',
-      title: 'Secure Contents',
-      text:
-        'Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.',
-    },
-  ],
+  subTitle: 'Who Are We?',
+  title: 'About Amanzunza',
 };
 
-export default function ServiceSection() {
+export default function AboutSection() {
   const [videoOpen, setVideoOpen] = useState(false);
 
   const handleClick = (e) => {
@@ -44,7 +24,7 @@ export default function ServiceSection() {
   };
 
   return (
-    <section id="service" sx={{ variant: 'section.services' }}>
+    <section id="about" sx={{ variant: 'section.about' }}>
       <Container sx={styles.containerBox}>
         <Box sx={styles.thumbnail}>
           <Image src={ServiceThumb} alt="thumbnail" />
@@ -53,27 +33,21 @@ export default function ServiceSection() {
               <IoIosPlay />
             </span>
           </Button>
-
-          <Box sx={styles.shapeBox}>
-            <Image src={shapePattern} alt="shape" />
-          </Box>
         </Box>
 
         <Box sx={styles.contentBox}>
           <TextFeature subTitle={data.subTitle} title={data.title} description={data.description} />
+          <hr sx={theme.styles.hr} />
 
           <Grid sx={styles.grid}>
-            {data.features.map((item) => (
-              <Box sx={styles.card} key={item.id}>
-                <Image src={item.imgSrc} alt={item.altText} sx={styles.icon} />
-
-                <Box sx={styles.wrapper}>
-                  <Heading sx={styles.wrapper.title}>{item.title}</Heading>
-
-                  <Text sx={styles.wrapper.subTitle}>{item.text}</Text>
+             <Box sx={styles.card}>
+               <Box sx={styles.wrapper}>
+                  <Text sx={styles.wrapper.subTitle}>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus repellendus amet nisi dolorem animi, doloremque ipsum itaque! Incidunt corrupti, numquam asperiores cum tempore a corporis neque beatae explicabo, perspiciatis voluptatem.
+                    Corrupti aspernatur veritatis recusandae officia quia quis temporibus hic necessitatibus itaque eaque deleniti, officiis doloremque quasi dolorem debitis corporis perferendis quod nam accusantium iste porro qui mollitia nihil maiores. Molestiae.
+                  </Text>
                 </Box>
               </Box>
-            ))}
           </Grid>
         </Box>
       </Container>
@@ -88,7 +62,7 @@ export default function ServiceSection() {
   );
 }
 
-const playPluse = keyframes`
+const playPulse = keyframes`
   from {
     transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
     opacity: 1;
@@ -152,7 +126,7 @@ const styles = {
       height: ['60px', null, '80px', null, '100px'],
       backgroundColor: 'primary',
       borderRadius: '50%',
-      animation: `${playPluse} 1.5s ease-out infinite`,
+      animation: `${playPulse} 1.5s ease-out infinite`,
       opacity: 0.5,
     },
     '> span': {
