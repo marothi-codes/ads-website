@@ -1,27 +1,61 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Image, Text } from 'theme-ui';
+import { jsx, Box, Container, Grid, Image, Text } from 'theme-ui';
 import { Link } from 'components/link';
+import theme from 'theme';
 import data from './footer.data';
-import FooterLogo from 'assets/logo.svg';
+import FooterLogo from 'assets/footer-logo.svg';
 
 export default function Footer() {
   return (
     <footer sx={styles.footer}>
-      <Container>
-        <Box sx={styles.footer.footerBottomArea}>
+      <Box sx={styles.footer.footerTopArea}>
+        <Container>
+          <Grid sx={styles.footer.grid}>
+            <div>
+              <h3>Navigation</h3>
+              <hr sx={theme.styles.hr} />
+            </div>
+            <div>
+              <h3>Contact Amanzunza</h3>
+              <hr sx={theme.styles.hr} />
+              <Text>
+                <strong>Cell: </strong>+27 72 129 7813
+              </Text>
+            </div>
+            <div>
+              <h3>Amanzunza GPS</h3>
+              <hr sx={theme.styles.hr} />
+            </div>
+          </Grid>
+        </Container>
+      </Box>
+      <Box sx={styles.footer.footerBottomArea}>
+        <Box sx={styles.footer.menus}>
+          <nav>
+            {data.menuItems.map((item, idx) => (
+              <Link key={idx} to={item.path} sx={styles.footer.link}>
+                {item.icon}
+              </Link>
+            ))}
+          </nav>
+          <br />
           <Link path="/">
-            <Image src={FooterLogo} width={120} alt="Footer Logo" />
+            <Image src={FooterLogo} width={200} alt="Footer Logo" />
           </Link>
-          <Box sx={styles.footer.menus}>
-            <nav>
-              {data.menuItems.map((item, idx) => (
-                <Link key={idx} path={item.path} label={item.label} sx={styles.footer.link} />
-              ))}
-            </nav>
-          </Box>
-          <Text sx={styles.footer.copyright}>Copyright &copy; {new Date().getFullYear()}</Text>
+          <br />
+          <Text sx={styles.footer.copyright}>
+            Copyright &copy; {new Date().getFullYear()} | Amanzunza Debt Solutions (Pty) Ltd
+            <br />
+            <Link
+              path="https://msdc.africa"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={styles.footer.link}>
+              Website By: MSDC Inc
+            </Link>
+          </Text>
         </Box>
-      </Container>
+      </Box>
     </footer>
   );
 }
@@ -29,10 +63,19 @@ export default function Footer() {
 const styles = {
   footer: {
     footerBottomArea: {
-      borderTop: '1px solid',
-      borderTopColor: 'border_color',
+      backgroundColor: '#000',
+      color: '#fff',
       display: 'flex',
-      pt: [7, null, 8],
+      pt: [1, null, 2],
+      pb: ['10px', null, '10px'],
+      textAlign: 'center',
+      flexDirection: 'column',
+    },
+    footerTopArea: {
+      backgroundColor: '#d52028',
+      color: '#fff',
+      display: 'flex',
+      pt: [2, null, 2],
       pb: ['40px', null, '100px'],
       textAlign: 'center',
       flexDirection: 'column',
@@ -50,7 +93,7 @@ const styles = {
 
     link: {
       fontSize: [1, '15px'],
-      color: 'text',
+      color: '#fff',
       fontWeight: '400',
       mb: 2,
       cursor: 'pointer',
@@ -66,6 +109,12 @@ const styles = {
     copyright: {
       fontSize: [1, '15px'],
       width: '100%',
+    },
+    grid: {
+      width: ['100%', '80%', '100%'],
+      mx: 'auto',
+      gridGap: ['35px 0', null, '40px 40px', '50px 60px', '30px', '50px 40px', '55px 90px'],
+      gridTemplateColumns: ['repeat(1,1fr)', null, 'repeat(2,1fr)', null, 'repeat(3,1fr)'],
     },
   },
 };

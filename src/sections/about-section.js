@@ -26,32 +26,39 @@ export default function AboutSection() {
   return (
     <section id="about" sx={{ variant: 'section.about' }}>
       <Container sx={styles.containerBox}>
-        <Box sx={styles.thumbnail}>
+        {/* <Box sx={styles.thumbnail}>
           <Image src={ServiceThumb} alt="thumbnail" />
           <Button sx={styles.videoBtn} onClick={handleClick} aria-label="Play Button">
             <span>
               <IoIosPlay />
             </span>
           </Button>
-        </Box>
+        </Box> */}
 
         <Box sx={styles.contentBox}>
           <TextFeature subTitle={data.subTitle} title={data.title} description={data.description} />
           <hr sx={theme.styles.hr} />
 
           <Grid sx={styles.grid}>
-             <Box sx={styles.card}>
-               <Box sx={styles.wrapper}>
-                  <Text sx={styles.wrapper.subTitle}>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus repellendus amet nisi dolorem animi, doloremque ipsum itaque! Incidunt corrupti, numquam asperiores cum tempore a corporis neque beatae explicabo, perspiciatis voluptatem.
-                    Corrupti aspernatur veritatis recusandae officia quia quis temporibus hic necessitatibus itaque eaque deleniti, officiis doloremque quasi dolorem debitis corporis perferendis quod nam accusantium iste porro qui mollitia nihil maiores. Molestiae.
-                  </Text>
-                </Box>
+            <Box sx={styles.card}>
+              <Box sx={styles.wrapper}>
+                <Text sx={styles.wrapper.subTitle}>
+                  As experts in credit management and legal related matters, we pride ourselves in
+                  assisting millions of indebted consumers to gain their financial freedom We
+                  Understand that Covid-19 has financially affected almost 85% of general consumers
+                  leaving a majority of consumers struggling to pay their debts.
+                  <br />
+                  <br />
+                  As credit legal related matters expects such as blacklisting, our trusted and
+                  professional team of attorneys are committed to assisting you/clients fight the
+                  effects of Covid-19 and regain control over their finances.
+                </Text>
               </Box>
+            </Box>
           </Grid>
         </Box>
       </Container>
-      
+
       <ModalVideo
         channel="youtube"
         isOpen={videoOpen}
@@ -147,10 +154,13 @@ const styles = {
     },
   },
   contentBox: {
-    width: ['100%', null, null, 315, 390, 450, null, 500],
+    width: ['100%', null, null, 315, 450, 550, null, 500],
     flexShrink: 0,
     mb: [7, null, 60, 0],
     textAlign: ['center', null, null, 'left'],
+    marginLeft: 'auto', // Remove once an introductory video is recorded.
+    marginRight: 'auto', // Remove once an introductory video is recorded.
+    textAlign: 'center', // Remove once an introductory video is recorded.
   },
   grid: {
     pr: [2, 0, null, null, 6, '70px'],
@@ -191,6 +201,7 @@ const styles = {
       fontSize: [1, null, null, '14px', 1],
       fontWeight: 400,
       lineHeight: 1.9,
+      textAlign: 'center', // Remove once an introductory video is recorded.
     },
   },
   videoWrapper: {

@@ -1,23 +1,51 @@
+import { FaFacebookF, FaTwitter, FaLinkedin } from 'react-icons/fa';
+
 export default {
   menuItems: [
     {
       path: '/',
+      icon: <FaFacebookF />,
+    },
+    {
+      path: '/',
+      icon: <FaTwitter />,
+    },
+    {
+      path: '/',
+      icon: <FaLinkedin />,
+    },
+  ],
+  navLinks: [
+    {
+      path: 'home',
       label: 'Home',
     },
     {
-      path: '/',
-      label: 'Advertise',
+      path: 'about',
+      label: 'About',
     },
     {
-      path: '/',
-      label: 'Support',
+      path: 'service',
+      label: 'Services',
     },
     {
-      path: '/',
-      label: 'Marketing',
+      path: 'why-us',
+      label: 'Why Us',
     },
     {
-      path: '/',
+      path: 'process',
+      label: 'Process',
+    },
+    {
+      path: 'team',
+      label: 'Team',
+    },
+    {
+      path: 'testimonial',
+      label: 'Testimonials',
+    },
+    {
+      path: 'contact',
       label: 'Contact',
     },
   ],
