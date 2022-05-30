@@ -11,6 +11,7 @@ import WhyUs from '../sections/why-us';
 import Process from '../sections/process';
 import TeamSection from '../sections/team-section';
 import TestimonialCard from '../sections/testimonial';
+import ContactSection from 'sections/contact-section';
 
 export default function IndexPage() {
   return (
@@ -24,6 +25,7 @@ export default function IndexPage() {
         <Process />
         <TeamSection />
         <TestimonialCard />
+        <ContactSection />
       </Layout>
     </ThemeProvider>
   );

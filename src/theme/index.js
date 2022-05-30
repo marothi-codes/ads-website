@@ -19,8 +19,8 @@ export default {
       dark: {
         text: '#fff',
         background: '#000',
-        primary: '#0cf',
-        secondary: '#09c',
+        primary: '#d52028',
+        secondary: '#fff',
         muted: '#111',
       },
     },
@@ -67,6 +67,10 @@ export default {
     main: {},
   },
   section: {
+    contact: {
+      pt: [2, null, 2, null, null, 2],
+      pb: ['45px', null, 5, null, null, 7, null, '90px'],
+    },
     services: {
       pt: [2, null, 2, null, null, 2],
       pb: ['90px', null, 9, null, null, 10, null, '165px'],
@@ -83,7 +87,7 @@ export default {
     },
     testimonial: {
       pt: [2, null, 4, '30px', null, 6, null, '115px'],
-      pb: ['90px', null, 9, null, null, 10, null, '190px'],
+      pb: ['45px', null, 5, null, null, 7, null, '90px'],
       overflow: 'hidden',
     },
     about: {

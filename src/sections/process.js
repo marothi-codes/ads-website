@@ -10,27 +10,21 @@ import ArrowEven from 'assets/arrowEven.svg';
 const data = [
   {
     id: 1,
-    title: 'Set disbursement Instructions',
+    title: 'Application',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae aut quas, tempora recusandae illo, similique iste sed esse, iure perferendis dolorum doloribus quisquam repellat natus. Minus rem autem odit numquam.',
+      'We obtain all the relevant details from the client so that we may be able to submit a debt removal application on behalf of the client.',
   },
   {
     id: 2,
-    title: 'Assembly retrieves funds from your account',
+    title: 'Assessment',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae aut quas, tempora recusandae illo, similique iste sed esse, iure perferendis dolorum doloribus quisquam repellat natus. Minus rem autem odit numquam.',
+      'Legal professionals from our team will then assess your situation and apply at the court to have your debt review status terminated.',
   },
   {
     id: 3,
-    title: 'Assembly initiates disbursement',
+    title: 'Court Order',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae aut quas, tempora recusandae illo, similique iste sed esse, iure perferendis dolorum doloribus quisquam repellat natus. Minus rem autem odit numquam.',
-  },
-  {
-    id: 4,
-    title: 'Customer receives funds payment',
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae aut quas, tempora recusandae illo, similique iste sed esse, iure perferendis dolorum doloribus quisquam repellat natus. Minus rem autem odit numquam.',
+      'A Court Order will be issued then should the court approve the request, all relevant documentation pertaining to the client will be sent to credit bureaus.',
   },
 ];
 
@@ -39,8 +33,8 @@ export default function Process() {
     <section id="process" sx={styles.process}>
       <Container>
         <SectionHeader
-          title="Debt Review Process"
-          slogan="GET INSIGHT INTO THE DEBT REVIEW PROCESS"
+          title="Debt Review Removal"
+          slogan="INSIGHT INTO THE DEBT REVIEW REMOVAL PROCESS"
           isWhite={true}
         />
 
@@ -74,7 +68,7 @@ const styles = {
     mb: -1,
     pt: 0,
     gridGap: ['35px 0', null, '45px 30px', null, '50px 25px', null, null, '50px 65px'],
-    gridTemplateColumns: ['repeat(1,1fr)', null, 'repeat(2,1fr)', null, 'repeat(4,1fr)'],
+    gridTemplateColumns: ['repeat(1,1fr)', null, 'repeat(2,1fr)', null, 'repeat(3,1fr)'],
   },
   card: {
     display: 'flex',
@@ -122,7 +116,7 @@ const styles = {
     fontSize: [6, null, 7, null, null, '30px'],
     fontWeight: 700,
     justifyContent: 'center',
-    color: '#234582',
+    color: '#d52028',
   },
   wrapper: {
     width: '100%',
