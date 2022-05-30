@@ -150,6 +150,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: '0.5rem',
 
     icon: {
       display: 'flex',
