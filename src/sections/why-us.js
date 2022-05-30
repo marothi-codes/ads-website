@@ -13,34 +13,32 @@ const data = [
   {
     id: 1,
     imgSrc: Performance,
-    altText: 'Fast Performance',
-    title: 'Experienced Team',
-    text:
-      'It ionsequat dolortis molor duis, hendrem mod. Adionsequat prat, molore re adignibh, dolutatueros, feugiat.',
+    altText: 'Vision',
+    title: 'Our Vision',
+    text: `To continuously strive to be the No1 Agency for Credit Legal Services in SA, by developing beneficial and lasting relationships with our clients through a process of continuous improvement whilst optimising their returns by delivering the most efficient and effective service.`,
   },
   {
     id: 2,
-    imgSrc: Partnership,
-    altText: 'Pro Subscription',
-    title: 'Timeous Service Delivery',
-    text:
-      'Ver velestis lortie quis, quat essequating vullan ea, uismodolor quamcommy erit vullutat. Nummodolor, ispum unt commy alis iurerosto modip, an lam dolorer ril se.',
+    imgSrc: Subscription,
+    altText: 'Our Objectives',
+    title: 'Our Objectives',
+    text: `Our objective is to provide a diligent, pragmatic and professional service for our clientele, to treat all clients with respect, honesty and integrity through our hard work ethic,
+endeavour and clear lines of communication, and to perpetually empower, encourage and motivate our employees to exceed all our clients' expectations.`,
   },
   {
     id: 3,
-    imgSrc: Subscription,
-    altText: 'Partnership deal',
-    title: 'Maximal Transparency',
-    text:
-      'Essequating nonsecte ibh ullamcommy nos veliquamcon laore iusto exeraessit rat. Quip atem voloreetum ver ril dion conse molent niatuero, facillametum.',
+    imgSrc: Partnership,
+    altText: 'Our Mission',
+    title: 'Our Mission',
+    text: `We aim to maintain ISO: 9001 standards and our commitment to quality, to endeavour to be the industry leader for Private Credit Legal Services in SA, by combining our wealth of experience and innovative technology, to empower our employees to achieve their individual goals through investment, empowerment and self-development and to maximize the collection of all debts whilst remaining mindful of existing business relationships.`,
   },
   {
     id: 4,
     imgSrc: Support,
-    altText: 'Customer Support',
-    title: 'Customer Support',
+    altText: 'Elite Tier Customer Support',
+    title: 'Elite Tier Customer Support',
     text:
-      'Vendiamet it tin feugiat eros irillamet lummy eui vullut molum vullam. Lor alit ate lutpat vullan minisi iurem feugiam verciduisi conulputat voloreetum velit.',
+      "With every client that knocks on our door, we walk with the client throughout the entire process and provide the client with clarity where applicable and/or by the client's request. We also guide the client along the way to ensure that no step of the process is too esoteric for him/her.",
   },
 ];
 

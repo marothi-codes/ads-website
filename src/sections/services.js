@@ -14,7 +14,7 @@ const data = [
     id: 1,
     imgSrc: Performance,
     altText: 'Fast Performance',
-    title: 'Debt Review',
+    title: 'Debt Review Removal',
     text:
       "We assist clients with debt review related matters by making sure that they're cleared from Debt Review Status and also have the status updated so that the client's name may be cleared when their credit records are checked.",
   },
@@ -52,6 +52,8 @@ export default function Services() {
         <br />
         <br />
         <SectionHeader slogan="WHAT WE DO" title="Our Services" />
+        <hr sx={theme.styles.hr} />
+        <br />
 
         <Grid sx={styles.grid}>
           {data.map((item) => (
