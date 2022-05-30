@@ -31,33 +31,31 @@ export default function ContactSection() {
             Name:
           </Label>
           <Input sx={styles.forms.input} name="name" id="name" mb={3} />
-
           {/* Email */}
           <Label sx={styles.forms.label} htmlFor="email">
             Email:
           </Label>
           <Input sx={styles.forms.input} type="email" name="email" id="email" mb={3} />
-
           {/* Enquiry */}
           <Label sx={styles.forms.label} htmlFor="enquiry">
             Enquiry:
           </Label>
           <Input sx={styles.forms.input} type="enquiry" name="enquiry" id="enquiry" mb={3} />
-
           {/* Subject */}
           <Label sx={styles.forms.label} htmlFor="subject">
             Subject:
           </Label>
           <Input sx={styles.forms.input} type="subject" name="subject" id="subject" mb={3} />
-
           {/* Message */}
           <Label sx={styles.forms.label} htmlFor="message">
             Message:
           </Label>
           <Textarea sx={styles.forms.textarea} name="message" id="message" rows={6} mb={3} />
-
-          {/*  */}
-          <Button>Send</Button>
+          {/* Submit Button */}
+          <hr sx={theme.styles.hr} />
+          <Button type="submit">Send my Message</Button>
+          {'  '}
+          <Button type="reset">Start Over</Button>
         </Box>
       </Container>
     </section>

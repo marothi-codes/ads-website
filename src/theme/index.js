@@ -14,7 +14,7 @@ export default {
     muted: '#E4E4E4', // muted color
     accent: '#609', // a contrast color for emphasizing UI
 
-    // highlight	a background color for highlighting text
+    // highlight a background color for highlighting text
     modes: {
       dark: {
         text: '#fff',
