@@ -1,52 +1,21 @@
-import { FaFacebookF, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaFacebookSquare, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export default {
   menuItems: [
     {
-      path: '/',
-      icon: <FaFacebookF />,
+      path: 'https://facebook.com/adsolution',
+      icon: <FaFacebookSquare />,
+      title: 'Facebook',
     },
     {
-      path: '/',
-      icon: <FaTwitter />,
+      path: 'https://instagram.com/adsolution',
+      icon: <FaInstagram />,
+      title: 'Instagram',
     },
-    {
-      path: '/',
-      icon: <FaLinkedin />,
-    },
-  ],
-  navLinks: [
-    {
-      path: 'home',
-      label: 'Home',
-    },
-    {
-      path: 'about',
-      label: 'About',
-    },
-    {
-      path: 'service',
-      label: 'Services',
-    },
-    {
-      path: 'why-us',
-      label: 'Why Us',
-    },
-    {
-      path: 'process',
-      label: 'Process',
-    },
-    {
-      path: 'team',
-      label: 'Team',
-    },
-    {
-      path: 'testimonial',
-      label: 'Testimonials',
-    },
-    {
-      path: 'contact',
-      label: 'Contact',
-    },
+    // {
+    //   path: '/',
+    //   icon: <FaLinkedin />,
+    //   title: 'LinkedIn',
+    // },
   ],
 };

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box, Container, Grid, Image, Text } from 'theme-ui';
-import { Link } from 'components/link';
+import { Link } from '../link';
 import theme from 'theme';
 import data from './footer.data';
 import FooterLogo from 'assets/footer-logo.svg';
@@ -12,35 +12,56 @@ export default function Footer() {
         <Container>
           <Grid sx={styles.footer.grid}>
             <div>
-              <h3>Navigation</h3>
+              <h3>Amanzunza Office</h3>
               <hr sx={theme.styles.hr} />
+              <address sx={styles.footer.footerTopArea.address}>
+                Block G32 Unit 3, Waterford Court
+                <br />
+                Cnr Rabie Str &amp; Glover Ave
+                <br />
+                Die Hoewes
+                <br />
+                Centurion
+                <br />
+                0163
+              </address>
             </div>
             <div>
-              <h3>Contact Amanzunza</h3>
+              <h3>Amanzunza Contacts</h3>
               <hr sx={theme.styles.hr} />
-              <Text>
+              <Link path="mailto:info@adsolution.co.za" sx={styles.footer.footerTopArea.link}>
+                <strong>Email: </strong>info@adsolution.co.za
+              </Link>
+              <Link path="callto:+27721297813" sx={styles.footer.footerTopArea.link}>
                 <strong>Cell: </strong>+27 72 129 7813
-              </Text>
+              </Link>
+              <Link path="callto:+27126771766" sx={styles.footer.footerTopArea.link}>
+                <strong>Tel: </strong>+27 12 677 1766
+              </Link>
             </div>
             <div>
-              <h3>Amanzunza GPS</h3>
+              <h3>Amanzunza Socials</h3>
               <hr sx={theme.styles.hr} />
+
+              <nav>
+                {data.menuItems.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    path={item.path}
+                    sx={styles.footer.footerTopArea.link}
+                    target="_blank">
+                    {item.icon} {item.title}
+                  </Link>
+                ))}
+              </nav>
             </div>
           </Grid>
         </Container>
       </Box>
       <Box sx={styles.footer.footerBottomArea}>
         <Box sx={styles.footer.menus}>
-          <nav>
-            {data.menuItems.map((item, idx) => (
-              <Link key={idx} to={item.path} sx={styles.footer.link}>
-                {item.icon}
-              </Link>
-            ))}
-          </nav>
-          <br />
           <Link path="/">
-            <Image src={FooterLogo} width={200} alt="Footer Logo" />
+            <Image src={FooterLogo} width={240} alt="Footer Logo" />
           </Link>
           <br />
           <Text sx={styles.footer.copyright}>
@@ -79,6 +100,35 @@ const styles = {
       pb: ['40px', null, '100px'],
       textAlign: 'center',
       flexDirection: 'column',
+      nav: {
+        display: 'flex',
+        alignItems: 'left',
+        justifyContent: 'left',
+        flexWrap: 'wrap',
+        textAlign: 'left',
+        width: '100%',
+        clear: 'both',
+      },
+      link: {
+        fontSize: [1, '18px'],
+        color: '#fff',
+        fontWeight: '400',
+        mb: 2,
+        cursor: 'pointer',
+        transition: 'all 0.35s',
+        display: 'block',
+        textDecoration: 'none',
+        lineHeight: [1.5, null, 1.8],
+        px: [2, null, 4],
+        textAlign: 'left',
+        width: '100%',
+        ':hover': {
+          color: '#000',
+        },
+      },
+      address: {
+        textAlign: 'left',
+      },
     },
     menus: {
       mt: [3, 4],
@@ -92,7 +142,7 @@ const styles = {
     },
 
     link: {
-      fontSize: [1, '15px'],
+      fontSize: [1, '18px'],
       color: '#fff',
       fontWeight: '400',
       mb: 2,
@@ -102,6 +152,7 @@ const styles = {
       textDecoration: 'none',
       lineHeight: [1.5, null, 1.8],
       px: [2, null, 4],
+      width: '100%',
       ':hover': {
         color: 'primary',
       },
@@ -114,7 +165,7 @@ const styles = {
       width: ['100%', '80%', '100%'],
       mx: 'auto',
       gridGap: ['35px 0', null, '40px 40px', '50px 60px', '30px', '50px 40px', '55px 90px'],
-      gridTemplateColumns: ['repeat(1,1fr)', null, 'repeat(2,1fr)', null, 'repeat(3,1fr)'],
+      gridTemplateColumns: ['repeat(1,1fr)', null, 'repeat(1,1fr)', null, 'repeat(3,1fr)'],
     },
   },
 };

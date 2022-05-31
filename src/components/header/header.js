@@ -20,7 +20,7 @@ export default function Header({ className }) {
               spy={true}
               smooth={true}
               offset={-70}
-              duration={500}
+              duration={800}
               key={idx}>
               {item.label}
             </Link>
@@ -41,7 +41,6 @@ const positionAnim = keyframes`
 
   to {
     position: absolute;
-    opacity: 1;
     transition: all 0.4s ease;
   }
 `;
