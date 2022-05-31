@@ -11,22 +11,22 @@ export default [
     path: 'service',
     label: 'Services',
   },
-  {
-    path: 'why-us',
-    label: 'Why Us',
-  },
+  // {
+  //   path: 'why-us',
+  //   label: 'Why Us',
+  // },
   {
     path: 'process',
     label: 'Process',
   },
-  {
-    path: 'team',
-    label: 'Team',
-  },
-  {
-    path: 'testimonial',
-    label: 'Testimonials',
-  },
+  // {
+  //   path: 'team',
+  //   label: 'Team',
+  // },
+  // {
+  //   path: 'testimonial',
+  //   label: 'Testimonials',
+  // },
   {
     path: 'contact',
     label: 'Contact',

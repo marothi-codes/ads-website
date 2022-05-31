@@ -4,8 +4,8 @@ import { jsx, Image, Box, Heading, Text } from 'theme-ui';
 export default function FeatureCard({ src, altText = 'default alt text', title, text }) {
   return (
     <Box sx={styles.card}>
-      <Image src={src} altText={altText} sx={styles.img} />
       <Box sx={styles.wrapper}>
+        <Image src={src} altText={altText} sx={styles.img} />
         <Heading sx={styles.wrapper.title}>{title}</Heading>
         <Text sx={styles.wrapper.subTitle}>{text}</Text>
       </Box>
@@ -21,11 +21,16 @@ const styles = {
   },
 
   img: {
-    width: ['70px', null, null, '80px', '90px', 'auto'],
+    width: ['70px', null, null, '80px', '90px', '100px'],
     height: 'auto',
     flexShrink: 0,
     mr: [2, 3, null, null, 4, 5],
     ml: -2,
+    '@media screen and (max-width: 767.99px)': {
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      textAlign: 'center',
+    },
   },
   wrapper: {
     width: '100%',

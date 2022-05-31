@@ -68,7 +68,7 @@ const styles = {
     mb: -1,
     pt: 0,
     gridGap: ['35px 0', null, '45px 30px', null, '50px 25px', null, null, '50px 65px'],
-    gridTemplateColumns: ['repeat(1,1fr)', null, 'repeat(2,1fr)', null, 'repeat(3,1fr)'],
+    gridTemplateColumns: ['repeat(1,1fr)', null, 'repeat(1,1fr)', null, 'repeat(3,1fr)'],
   },
   card: {
     display: 'flex',
@@ -101,6 +101,9 @@ const styles = {
     '&:last-child::before': {
       display: 'none',
     },
+    '@media screen and (max-width: 1023.99px)': {
+      textAlign: 'center',
+    },
   },
 
   iconBox: {
@@ -116,7 +119,12 @@ const styles = {
     fontSize: [6, null, 7, null, null, '30px'],
     fontWeight: 700,
     justifyContent: 'center',
-    color: '#d52028',
+    color: 'primary',
+    '@media screen and (max-width: 1023.99px)': {
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      textAlign: 'center',
+    },
   },
   wrapper: {
     width: '100%',

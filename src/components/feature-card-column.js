@@ -21,6 +21,11 @@ const styles = {
     mb: -1,
     textAlign: ['center', null, 'left'],
     px: [4, null, 0],
+    '@media screen and (max-width: 1023.99px)': {
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      textAlign: 'center',
+    },
   },
   img: {
     mx: ['auto', null, 0],

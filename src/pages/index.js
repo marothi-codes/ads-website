@@ -9,8 +9,8 @@ import Services from '../sections/services';
 import AboutSection from '../sections/about-section';
 import WhyUs from '../sections/why-us';
 import Process from '../sections/process';
-import TeamSection from '../sections/team-section';
-import TestimonialCard from '../sections/testimonial';
+//import TeamSection from '../sections/team-section';
+//import TestimonialCard from '../sections/testimonial';
 import ContactSection from 'sections/contact-section';
 
 export default function IndexPage() {
@@ -23,8 +23,7 @@ export default function IndexPage() {
         <Services />
         <WhyUs />
         <Process />
-        <TeamSection />
-        <TestimonialCard />
+        {/* <TestimonialCard /> */}
         <ContactSection />
       </Layout>
     </ThemeProvider>

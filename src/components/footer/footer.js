@@ -10,7 +10,35 @@ export default function Footer() {
     <footer sx={styles.footer}>
       <Box sx={styles.footer.footerTopArea}>
         <Container>
+          <Link path="/">
+            <Image src={FooterLogo} width={240} alt="Footer Logo" />
+          </Link>
           <Grid sx={styles.footer.grid}>
+            <div>
+              <h3>Amanzunza Contacts</h3>
+              <hr sx={theme.styles.hr} />
+              <Link path="mailto:info@adsolution.co.za" sx={styles.footer.footerTopArea.link}>
+                <strong>Email: </strong>info@adsolution.co.za
+              </Link>
+              <Link path="callto:+27721297813" sx={styles.footer.footerTopArea.link}>
+                <strong>Cell: </strong>+27 72 129 7813
+              </Link>
+              <Link path="callto:+27126771766" sx={styles.footer.footerTopArea.link}>
+                <strong>Tel: </strong>+27 12 677 1766
+              </Link>
+
+              <nav>
+                {data.menuItems.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    path={item.path}
+                    sx={styles.footer.footerTopArea.link}
+                    target="_blank">
+                    {item.icon} {item.title}
+                  </Link>
+                ))}
+              </nav>
+            </div>
             <div>
               <h3>Amanzunza Office</h3>
               <hr sx={theme.styles.hr} />
@@ -26,44 +54,11 @@ export default function Footer() {
                 0163
               </address>
             </div>
-            <div>
-              <h3>Amanzunza Contacts</h3>
-              <hr sx={theme.styles.hr} />
-              <Link path="mailto:info@adsolution.co.za" sx={styles.footer.footerTopArea.link}>
-                <strong>Email: </strong>info@adsolution.co.za
-              </Link>
-              <Link path="callto:+27721297813" sx={styles.footer.footerTopArea.link}>
-                <strong>Cell: </strong>+27 72 129 7813
-              </Link>
-              <Link path="callto:+27126771766" sx={styles.footer.footerTopArea.link}>
-                <strong>Tel: </strong>+27 12 677 1766
-              </Link>
-            </div>
-            <div>
-              <h3>Amanzunza Socials</h3>
-              <hr sx={theme.styles.hr} />
-
-              <nav>
-                {data.menuItems.map((item, idx) => (
-                  <Link
-                    key={idx}
-                    path={item.path}
-                    sx={styles.footer.footerTopArea.link}
-                    target="_blank">
-                    {item.icon} {item.title}
-                  </Link>
-                ))}
-              </nav>
-            </div>
           </Grid>
         </Container>
       </Box>
       <Box sx={styles.footer.footerBottomArea}>
         <Box sx={styles.footer.menus}>
-          <Link path="/">
-            <Image src={FooterLogo} width={240} alt="Footer Logo" />
-          </Link>
-          <br />
           <Text sx={styles.footer.copyright}>
             Copyright &copy; {new Date().getFullYear()} | Amanzunza Debt Solutions (Pty) Ltd
             <br />
@@ -96,14 +91,12 @@ const styles = {
       backgroundColor: '#d52028',
       color: '#fff',
       display: 'flex',
-      pt: [2, null, 2],
+      pt: [5, 6, 6],
       pb: ['40px', null, '100px'],
       textAlign: 'center',
       flexDirection: 'column',
       nav: {
         display: 'flex',
-        alignItems: 'left',
-        justifyContent: 'left',
         flexWrap: 'wrap',
         textAlign: 'left',
         width: '100%',
@@ -125,9 +118,18 @@ const styles = {
         ':hover': {
           color: '#000',
         },
+        '@media screen and (max-width: 1023.99px)': {
+          textAlign: 'center',
+        },
       },
       address: {
         textAlign: 'left',
+        '@media screen and (min-width: 1024px)': {
+          textAlign: 'right',
+        },
+        '@media screen and (max-width: 1023.99px)': {
+          textAlign: 'center',
+        },
       },
     },
     menus: {
@@ -165,7 +167,7 @@ const styles = {
       width: ['100%', '80%', '100%'],
       mx: 'auto',
       gridGap: ['35px 0', null, '40px 40px', '50px 60px', '30px', '50px 40px', '55px 90px'],
-      gridTemplateColumns: ['repeat(1,1fr)', null, 'repeat(1,1fr)', null, 'repeat(3,1fr)'],
+      gridTemplateColumns: ['repeat(1,1fr)', null, 'repeat(1,1fr)', null, 'repeat(2,1fr)'],
     },
   },
 };
