@@ -6,7 +6,7 @@ import TextFeature from 'components/text-feature';
 import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
 
-import ServiceThumb from 'assets/service-thumb.png';
+import VideoThumb from 'assets/video-thumb.jpg';
 
 import theme from 'theme';
 
@@ -25,20 +25,11 @@ export default function AboutSection() {
 
   return (
     <section id="about" sx={{ variant: 'section.about' }}>
-      <Container sx={styles.containerBox}>
-        {/* <Box sx={styles.thumbnail}>
-          <Image src={ServiceThumb} alt="thumbnail" />
-          <Button sx={styles.videoBtn} onClick={handleClick} aria-label="Play Button">
-            <span>
-              <IoIosPlay />
-            </span>
-          </Button>
-        </Box> */}
+      <Container>
+        <TextFeature subTitle={data.subTitle} title={data.title} description={data.description} />
+        <hr sx={theme.styles.hr} />
 
         <Box sx={styles.contentBox}>
-          <TextFeature subTitle={data.subTitle} title={data.title} description={data.description} />
-          <hr sx={theme.styles.hr} />
-
           <Grid sx={styles.grid}>
             <Box sx={styles.card}>
               <Box sx={styles.wrapper}>
@@ -55,6 +46,17 @@ export default function AboutSection() {
                 </Text>
               </Box>
             </Box>
+
+            <Box sx={styles.card}>
+              <Box sx={styles.thumbnail}>
+                <Image src={VideoThumb} alt="thumbnail" />
+                <Button sx={styles.videoBtn} onClick={handleClick} aria-label="Play Button">
+                  <span>
+                    <IoIosPlay />
+                  </span>
+                </Button>
+              </Box>
+            </Box>
           </Grid>
         </Box>
       </Container>
@@ -62,7 +64,7 @@ export default function AboutSection() {
       <ModalVideo
         channel="youtube"
         isOpen={videoOpen}
-        videoId="BGexHR1tuOA"
+        videoId="-xn2Adq49AA"
         onClose={() => setVideoOpen(false)}
       />
     </section>
@@ -76,7 +78,7 @@ const playPulse = keyframes`
   }
 
   to {
-	transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+	transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.3);
     opacity: 0;
   }
 `;
@@ -85,12 +87,6 @@ const styles = {
   coreFeature: {
     py: [0, null, null, 2, null, 7],
     position: 'relative',
-  },
-  containerBox: {
-    display: 'flex',
-    alignItems: ['flex-start', null, null, 'center'],
-    justifyContent: ['flex-start', null, null, 'space-between'],
-    flexDirection: ['column', null, null, 'row'],
   },
   thumbnail: {
     mr: ['auto', null, null, 6, 60, 85],
@@ -136,7 +132,7 @@ const styles = {
       opacity: 0.5,
     },
     '> span': {
-      backgroundColor: 'rgba(255,255,255,0.5)',
+      backgroundColor: 'rgba(0,0,0,0.8)',
       width: 'inherit',
       height: 'inherit',
       textAlign: 'center',
@@ -154,22 +150,22 @@ const styles = {
     },
   },
   contentBox: {
-    width: ['100%', null, null, 315, 450, 550, null, 500],
+    width: ['100%', null, null, '100%', '100%', '100%', null, '100%'],
     flexShrink: 0,
     mb: [7, null, 60, 0],
     textAlign: ['center', null, null, 'left'],
-    marginLeft: 'auto', // Remove once an introductory video is recorded.
-    marginRight: 'auto', // Remove once an introductory video is recorded.
-    textAlign: 'center', // Remove once an introductory video is recorded.
+    // marginLeft: 'auto', Remove once an introductory video is recorded.
+    // marginRight: 'auto', Remove once an introductory video is recorded.
+    // textAlign: 'center', Remove once an introductory video is recorded.
+    '@media screen and (max-width: 767.99px)': {
+      textAlign: 'center',
+    },
   },
   grid: {
-    pr: [2, 0, null, null, 6, '70px'],
-    pl: [2, 0],
     pt: [2, null, null, null, 3],
-    mx: 'auto',
-    width: ['100%', 370, 420, '100%'],
-    gridGap: ['35px 0', null, null, null, '50px 0'],
-    gridTemplateColumns: ['repeat(1,1fr)'],
+    width: ['100%'],
+    gridGap: ['40px 0', null, '45px 30px', null, '60px 50px', '70px 50px', null, '80px 90px'],
+    gridTemplateColumns: ['repeat(1,1fr)', 'repeat(1,1fr)', 'repeat(1,1fr)', 'repeat(2,1fr)'],
   },
   card: {
     display: 'flex',
@@ -201,7 +197,7 @@ const styles = {
       fontSize: [1, null, null, '14px', 1],
       fontWeight: 400,
       lineHeight: 1.9,
-      textAlign: 'center', // Remove once an introductory video is recorded.
+      // textAlign: 'center', Remove once an introductory video is recorded.
     },
   },
   videoWrapper: {

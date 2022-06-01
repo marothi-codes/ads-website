@@ -53,6 +53,7 @@ const styles = {
       mb: [2, 3],
       lineHeight: 1.5,
       letterSpacing: ['1.5px', null, '2px'],
+      textAlign: 'center',
     },
     title: {
       fontSize: ['24px', null, '28px', '30px', '36px', '42px', null, '48px'],
@@ -61,6 +62,7 @@ const styles = {
       fontWeight: '700',
       letterSpacing: '-.5px',
       mb: 5,
+      textAlign: 'center',
     },
   },
   description: {
