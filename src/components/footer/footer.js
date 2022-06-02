@@ -15,7 +15,7 @@ export default function Footer() {
           </Link>
           <Grid sx={styles.footer.grid}>
             <div>
-              <h3>Amanzunza Contacts</h3>
+              <h3 sx={styles.footer.footerTopArea.amanzunzaContacts}>Amanzunza Contacts</h3>
               <hr sx={theme.styles.hr} />
               <Link path="mailto:info@adsolution.co.za" sx={styles.footer.footerTopArea.link}>
                 <strong>Email: </strong>info@adsolution.co.za
@@ -40,7 +40,7 @@ export default function Footer() {
               </nav>
             </div>
             <div>
-              <h3>Amanzunza Office</h3>
+              <h3 sx={styles.footer.footerTopArea.amanzunzaOffice}>Amanzunza Office</h3>
               <hr sx={theme.styles.hr} />
               <address sx={styles.footer.footerTopArea.address}>
                 Block G32 Unit 3, Waterford Court
@@ -60,13 +60,15 @@ export default function Footer() {
       <Box sx={styles.footer.footerBottomArea}>
         <Box sx={styles.footer.menus}>
           <Text sx={styles.footer.copyright}>
-            Copyright &copy; {new Date().getFullYear()} | Amanzunza Debt Solutions (Pty) Ltd
+            Amanzunza Debt Solutions (Pty) Ltd
+            <br />
+            Copyright &copy; {new Date().getFullYear()}
             <br />
             <Link
               path="https://msdc.africa"
               target="_blank"
               rel="noopener noreferrer"
-              sx={styles.footer.link}>
+              sx={styles.footer.footerBottomArea.link}>
               Website By: MSDC Inc
             </Link>
           </Text>
@@ -86,6 +88,19 @@ const styles = {
       pb: ['10px', null, '10px'],
       textAlign: 'center',
       flexDirection: 'column',
+      link: {
+        fontSize: '12.2px',
+        color: '#d9d9d9',
+        cursor: 'pointer',
+        transition: 'all 0.35s',
+        display: 'block',
+        textDecoration: 'none',
+        px: [2, null, 4],
+        width: '100%',
+        ':hover': {
+          color: 'primary',
+        },
+      },
     },
     footerTopArea: {
       backgroundColor: '#d52028',
@@ -118,8 +133,18 @@ const styles = {
         ':hover': {
           color: '#000',
         },
-        '@media screen and (max-width: 1023.99px)': {
+        '@media screen and (max-width: 1024px)': {
           textAlign: 'center',
+        },
+      },
+      amanzunzaContacts: {
+        '@media screen and (min-width: 1024px)': {
+          textAlign: 'left',
+        },
+      },
+      amanzunzaOffice: {
+        '@media screen and (min-width: 1024px)': {
+          textAlign: 'right',
         },
       },
       address: {

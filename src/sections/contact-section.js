@@ -1,34 +1,29 @@
 /** @jsx jsx */
-import { useState } from 'react';
 import { jsx } from 'theme-ui';
 import { Box, Button, Container, Grid, Input, Label, Textarea } from 'theme-ui';
 import theme from 'theme';
 import { Controller, useForm } from 'react-hook-form';
+import { GrSend, GrPowerReset } from 'react-icons/gr';
 import SectionHeader from 'components/section-header';
 
 export default function ContactSection() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
-
   const {
-    register,
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({ mode: 'onBlur' });
+  } = useForm({
+    mode: 'onBlur',
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      message: '',
+    },
+  });
 
-  const handleFormSubmit = () => {
-    let formData = {
-      name,
-      email,
-      phone,
-      subject,
-      message,
-    };
-    console.log(JSON.stringify(formData));
+  const handleFormSubmit = (data) => {
+    console.log(JSON.stringify(data));
   };
 
   return (
@@ -47,12 +42,11 @@ export default function ContactSection() {
             <Label sx={styles.forms.label} htmlFor="name">
               Name:
             </Label>
-            <Input
-              sx={styles.forms.input}
-              id="name"
-              mb={3}
-              onChange={(e) => setName(e.target.value)}
-              {...register('name', { required: true, minLength: 5 })}
+            <Controller
+              name="name"
+              control={control}
+              rules={{ required: true, minLength: 5 }}
+              render={({ field }) => <Input id="name" sx={styles.forms.input} mb={3} {...field} />}
             />
             {errors?.name?.type === 'required' && (
               <p sx={styles.forms.error}>Please enter your name.</p>
@@ -64,17 +58,17 @@ export default function ContactSection() {
             <Label sx={styles.forms.label} htmlFor="email">
               Email:
             </Label>
-            <Input
-              sx={styles.forms.input}
-              type="email"
-              id="email"
-              mb={3}
-              onChange={(e) => setEmail(e.target.value)}
-              {...register('email', {
+            <Controller
+              name="email"
+              control={control}
+              rules={{
                 required: true,
                 minLength: 7,
                 pattern: /^[_\w\-]+(\.[_\w\-]+)*@[\w\-]+(\.[\w\-]+)*(\.[\D]{2,6})$/,
-              })}
+              }}
+              render={({ field }) => (
+                <Input id="email" type="email" sx={styles.forms.input} mb={3} {...field} />
+              )}
             />
             {errors?.email?.type === 'required' && (
               <p sx={styles.forms.error}>Please enter your email.</p>
@@ -89,13 +83,13 @@ export default function ContactSection() {
             <Label sx={styles.forms.label} htmlFor="phone">
               Phone:
             </Label>
-            <Input
-              sx={styles.forms.input}
-              type="tel"
-              id="phone"
-              mb={3}
-              onChange={(e) => setPhone(e.target.value)}
-              {...register('phone', { required: true, minLength: 10, pattern: /([\d])/ })}
+            <Controller
+              name="phone"
+              control={control}
+              rules={{ required: true, minLength: 5, pattern: /([\d])/ }}
+              render={({ field }) => (
+                <Input id="phone" type="tel" sx={styles.forms.input} mb={3} {...field} />
+              )}
             />
             {errors?.phone?.type === 'required' && (
               <p sx={styles.forms.error}>Please enter your phone number.</p>
@@ -110,14 +104,13 @@ export default function ContactSection() {
             <Label sx={styles.forms.label} htmlFor="subject">
               Subject:
             </Label>
-            <Input
-              sx={styles.forms.input}
-              type="text"
+            <Controller
               name="subject"
-              id="subject"
-              mb={3}
-              onChange={(e) => setSubject(e.target.value)}
-              {...register('subject', { required: true })}
+              control={control}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <Input id="subject" sx={styles.forms.input} mb={3} {...field} />
+              )}
             />
             {errors?.subject?.type === 'required' && (
               <p sx={styles.forms.error}>Please fill in the subject.</p>
@@ -126,22 +119,24 @@ export default function ContactSection() {
             <Label sx={styles.forms.label} htmlFor="message">
               Message:
             </Label>
-            <Textarea
-              sx={styles.forms.textarea}
-              id="message"
-              rows={6}
-              mb={3}
-              onChange={(e) => setMessage(e.target.value)}
-              {...register('message', { required: true })}
+            <Controller
+              name="message"
+              control={control}
+              rules={{ required: true }}
+              render={({ field }) => <Textarea id="message" rows={6} mb={3} {...field} />}
             />
             {errors?.message?.type === 'required' && (
               <p sx={styles.forms.error}>Please fill in the message.</p>
             )}
             {/* Submit Button */}
             <hr sx={theme.styles.hr} />
-            <Button type="submit">Send my Message</Button>
+            <Button type="submit">
+              <GrSend /> Send It
+            </Button>
             {'  '}
-            <Button type="reset">Start Over</Button>
+            <Button type="reset">
+              <GrPowerReset /> Start Over
+            </Button>
           </form>
 
           <Box>
