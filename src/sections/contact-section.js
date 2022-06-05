@@ -9,8 +9,9 @@ import SectionHeader from 'components/section-header';
 export default function ContactSection() {
   const {
     control,
-    handleSubmit,
     formState: { errors },
+    handleSubmit,
+    reset,
   } = useForm({
     mode: 'onBlur',
     defaultValues: {
@@ -22,8 +23,19 @@ export default function ContactSection() {
     },
   });
 
-  const handleFormSubmit = (data) => {
-    console.log(JSON.stringify(data));
+  const handleFormSubmit = async (data) => {
+    try {
+      const response = await fetch('http://localhost:3000/api/contact', {
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      });
+
+      if (response.status === 200) reset();
+      console.log(response);
+    } catch (error) {}
   };
 
   return (
@@ -123,7 +135,9 @@ export default function ContactSection() {
               name="message"
               control={control}
               rules={{ required: true }}
-              render={({ field }) => <Textarea id="message" rows={6} mb={3} {...field} />}
+              render={({ field }) => (
+                <Textarea id="message" rows={6} mb={3} sx={styles.forms.textarea} {...field} />
+              )}
             />
             {errors?.message?.type === 'required' && (
               <p sx={styles.forms.error}>Please fill in the message.</p>
@@ -131,11 +145,11 @@ export default function ContactSection() {
             {/* Submit Button */}
             <hr sx={theme.styles.hr} />
             <Button type="submit">
-              <GrSend /> Send It
+              <GrSend sx={styles.forms.icon} /> Send It
             </Button>
             {'  '}
-            <Button type="reset">
-              <GrPowerReset /> Start Over
+            <Button type="reset" onClick={() => reset()}>
+              <GrPowerReset sx={styles.forms.icon} /> Start Over
             </Button>
           </form>
 
@@ -193,6 +207,9 @@ const styles = {
     },
     error: {
       color: 'primary',
+    },
+    icon: {
+      color: '#fff',
     },
   },
 };
