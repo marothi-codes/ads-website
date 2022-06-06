@@ -1,11 +1,17 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Box, Button, Container, Grid, Input, Label, Textarea } from 'theme-ui';
+import { useState } from 'react';
+import { Alert, Box, Button, Container, Grid, Input, Label, Spinner, Textarea } from 'theme-ui';
 import theme from 'theme';
 import { Controller, useForm } from 'react-hook-form';
 import SectionHeader from 'components/section-header';
+import axios from 'axios';
 
 export default function ContactSection() {
+  const [loading, setLoading] = useState(false);
+  const [formMessage, setFormMessage] = useState('');
+  const [formMessageType, setFormMessageType] = useState('success');
+
   const {
     control,
     formState: { errors },
@@ -24,17 +30,22 @@ export default function ContactSection() {
 
   const handleFormSubmit = async (data) => {
     try {
-      const response = await fetch('http://localhost:3000/api/contact', {
-        body: JSON.stringify(data),
+      setLoading(true);
+      const response = await axios.post('http://localhost:3000/api/contact', JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json',
         },
-        method: 'POST',
       });
 
       if (response.status === 200) reset();
-      console.log(response);
-    } catch (error) {}
+      setLoading(false);
+      console.log(response.data);
+      const { message, type } = response.data;
+      setFormMessage(message);
+      setFormMessageType(type);
+    } catch (error) {
+      setLoading(false);
+    }
   };
 
   return (
@@ -148,6 +159,22 @@ export default function ContactSection() {
             <Button type="reset" onClick={() => reset()}>
               Start Over
             </Button>
+
+            <Box sx={{ margin: '1rem' }}>
+              {loading ? (
+                <>
+                  <br />
+                  <Spinner />
+                </>
+              ) : formMessageType !== '' ? (
+                <>
+                  <br />
+                  <Alert variant={formMessageType}>{formMessage}</Alert>
+                </>
+              ) : (
+                <></>
+              )}
+            </Box>
           </form>
 
           <Box>
@@ -207,6 +234,9 @@ const styles = {
     },
     icon: {
       color: '#fff',
+    },
+    alert: {
+      marginTop: '1rem',
     },
   },
 };

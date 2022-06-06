@@ -11,6 +11,7 @@ export default {
     yellow: '#FFA740', // border color
     primary: '#d52028', // primary button and link color
     secondary: '#2563FF', // secondary color - can be used for hover states
+    success: '#198754', // Success for success feedback from server-side operations.
     muted: '#E4E4E4', // muted color
     accent: '#609', // a contrast color for emphasizing UI
 
@@ -65,6 +66,20 @@ export default {
       justifyContent: 'space-between',
     },
     main: {},
+  },
+  alerts: {
+    primary: {
+      color: '#fff',
+      bg: 'success',
+    },
+    muted: {
+      color: 'text',
+      bg: 'muted',
+    },
+    danger: {
+      color: '#fff',
+      bg: 'primary',
+    },
   },
   section: {
     contact: {

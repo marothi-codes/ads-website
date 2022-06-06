@@ -51,10 +51,13 @@ async function handler(req, res) {
     console.log(info.messageId);
     res.status(200).json({
       message: `Thank you for contacting ADS ${name}, Amanzunza Debt Solutions has received your message.`,
+      type: 'success',
     });
   } catch (error) {
     console.log(error.message);
-    res.status(500).json({ message: 'An error occurred while sending your message.' });
+    res
+      .status(500)
+      .json({ message: 'An error occurred while sending your message.', type: 'danger' });
   }
 }
 
