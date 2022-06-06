@@ -82,6 +82,7 @@ export default {
       pb: [8, null, 9, null, null, 10, null, '170px'],
     },
     coreFeature: {
+      pt: [2, null, 4, '30px', null, 6, null, '115px'],
       pb: [8, null, 9, null, null, 10, null, '170px'],
       overflow: 'hidden',
     },

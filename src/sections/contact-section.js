@@ -3,7 +3,6 @@ import { jsx } from 'theme-ui';
 import { Box, Button, Container, Grid, Input, Label, Textarea } from 'theme-ui';
 import theme from 'theme';
 import { Controller, useForm } from 'react-hook-form';
-import { GrSend, GrPowerReset } from 'react-icons/gr';
 import SectionHeader from 'components/section-header';
 
 export default function ContactSection() {
@@ -144,12 +143,10 @@ export default function ContactSection() {
             )}
             {/* Submit Button */}
             <hr sx={theme.styles.hr} />
-            <Button type="submit">
-              <GrSend sx={styles.forms.icon} /> Send It
-            </Button>
+            <Button type="submit">Send It</Button>
             {'  '}
             <Button type="reset" onClick={() => reset()}>
-              <GrPowerReset sx={styles.forms.icon} /> Start Over
+              Start Over
             </Button>
           </form>
 

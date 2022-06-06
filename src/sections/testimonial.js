@@ -95,7 +95,7 @@ const carouselParams = {
   renderButtonGroupOutside: true,
   renderDotsOutside: false,
   responsive: responsive,
-  showDots: false,
+  showDots: true,
   sliderClass: '',
   slidesToSlide: 1,
 };
@@ -118,7 +118,7 @@ export default function TestimonialCard() {
                 {item.title}
               </Heading>
               <Text sx={styles.description}>{item.description}</Text>
-              <div className="cardofooter">
+              <div className="card-footer">
                 <div className="image">
                   <Image src={item.avatar} alt={item.name} />
                 </div>
