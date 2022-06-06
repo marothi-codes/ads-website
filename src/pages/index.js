@@ -12,20 +12,23 @@ import Process from '../sections/process';
 //import TeamSection from '../sections/team-section';
 //import TestimonialCard from '../sections/testimonial';
 import ContactSection from 'sections/contact-section';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
-        <SEO title="Amanzunza Debt Solutions (Pty) Ltd" />
-        <Banner />
-        <AboutSection />
-        <Services />
-        <WhyUs />
-        <Process />
-        {/* <TestimonialCard /> */}
-        <ContactSection />
-      </Layout>
+      <ParallaxProvider>
+        <Layout>
+          <SEO title="Amanzunza Debt Solutions (Pty) Ltd" />
+          <Banner />
+          <AboutSection />
+          <Services />
+          <WhyUs />
+          <Process />
+          {/* <TestimonialCard /> */}
+          <ContactSection />
+        </Layout>
+      </ParallaxProvider>
     </ThemeProvider>
   );
 }
