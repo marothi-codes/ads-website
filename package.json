@@ -2,6 +2,7 @@
   "name": "amanzunza-debt-solutions",
   "version": "2.0.0",
   "private": false,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
