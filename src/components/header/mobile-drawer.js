@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
 import { Box } from 'theme-ui';
-import { Scrollbars } from 'react-custom-scrollbars';
 import Drawer from 'components/drawer';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
 import { Link } from 'react-scroll';
-import { FaFacebookF, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaFacebookSquare, FaInstagram } from 'react-icons/fa';
 import menuItems from './header.data';
 
 const social = [
   {
-    path: '/',
-    icon: <FaFacebookF />,
+    path: 'https://facebook.com/adsolution',
+    icon: <FaFacebookSquare />,
+    title: 'Facebook',
   },
   {
-    path: '/',
-    icon: <FaTwitter />,
-  },
-  {
-    path: '/',
-    icon: <FaLinkedin />,
+    path: 'https://instagram.com/adsolution',
+    icon: <FaInstagram />,
+    title: 'Instagram',
   },
 ];
 
@@ -38,38 +35,36 @@ export default function MobileDrawer() {
       closeButton={<IoMdClose size="24px" />}
       drawerStyle={styles.drawer}
       closeButtonStyle={styles.close}>
-      <Scrollbars autoHide>
-        <Box sx={styles.content}>
-          <Box sx={styles.menu}>
-            {menuItems.map((item, idx) => (
-              <Link
-                activeClass="active"
-                to={item.path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={idx}
-                onClick={() => setIsDrawerOpen((previousState) => !previousState)}>
-                {item.label}
-              </Link>
+      <Box sx={styles.content}>
+        <Box sx={styles.menu}>
+          {menuItems.map((item, idx) => (
+            <Link
+              activeClass="active"
+              to={item.path}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              key={idx}
+              onClick={() => setIsDrawerOpen((previousState) => !previousState)}>
+              {item.label}
+            </Link>
+          ))}
+        </Box>
+        <Box sx={styles.menuFooter}>
+          <Box sx={styles.social}>
+            {social.map((item, idx) => (
+              <Box as="span" key={idx} sx={styles.social.icon}>
+                <Link
+                  to={item.path}
+                  onClick={() => setIsDrawerOpen((previousState) => !previousState)}>
+                  {item.icon}
+                </Link>
+              </Box>
             ))}
           </Box>
-          <Box sx={styles.menuFooter}>
-            <Box sx={styles.social}>
-              {social.map((item, idx) => (
-                <Box as="span" key={idx} sx={styles.social.icon}>
-                  <Link
-                    to={item.path}
-                    onClick={() => setIsDrawerOpen((previousState) => !previousState)}>
-                    {item.icon}
-                  </Link>
-                </Box>
-              ))}
-            </Box>
-          </Box>
         </Box>
-      </Scrollbars>
+      </Box>
     </Drawer>
   );
 }

@@ -10,7 +10,7 @@ import axios from 'axios';
 export default function ContactSection() {
   const [loading, setLoading] = useState(false);
   const [formMessage, setFormMessage] = useState('');
-  const [formMessageType, setFormMessageType] = useState('success');
+  const [formMessageType, setFormMessageType] = useState('');
 
   const {
     control,

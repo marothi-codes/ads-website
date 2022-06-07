@@ -36,7 +36,7 @@ const responsive = {
 
 const carouselParams = {
   additionalTransform: 0,
-  arrows: true,
+  arrows: false,
   autoPlay: true,
   autoPlaySpeed: 3000,
   centerMode: true,
@@ -51,7 +51,7 @@ const carouselParams = {
   keyBoardControl: true,
   minimumTouchDrag: 80,
   renderButtonGroupOutside: true,
-  renderDotsOutside: true,
+  renderDotsOutside: false,
   responsive: responsive,
   showDots: true,
   sliderClass: '',
