@@ -24,13 +24,13 @@ async function handler(req, res) {
       One of our team members will be sure to contact you very soon. We are looking forward to working with you.
     </p>
   `;
-  const to = ['test@localhost.io', 'web@localhost.io'];
+  const to = ['info@adsolution.co.za', email];
   const bodies = [adsBody, userBody];
 
   const transport = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
-    secure: false,
+    secure: true,
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASSWORD,
@@ -42,7 +42,7 @@ async function handler(req, res) {
 
     for (let i = 0; i < 2; i++) {
       info = await transport.sendMail({
-        from: 'Localhost Bot <noreply@localhost.io>',
+        from: 'Amanzunza Debt Solutions <noreply@adsolution.co.za>',
         to: to[i],
         subject: subject,
         html: bodies[i],
