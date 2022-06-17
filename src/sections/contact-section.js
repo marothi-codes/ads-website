@@ -31,11 +31,15 @@ export default function ContactSection() {
   const handleFormSubmit = async (data) => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:3000/api/contact', JSON.stringify(data), {
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await axios.post(
+        'https://ads-website-ten.vercel.app/api/contact',
+        JSON.stringify(data),
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
         },
-      });
+      );
 
       if (response.status === 200) reset();
       setLoading(false);
@@ -184,7 +188,8 @@ export default function ContactSection() {
               allowFullScreen=""
               loading="lazy"
               sx={styles.forms.map}
-              referrerPolicy="no-referrer-when-downgrade"></iframe>
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </Box>
         </Grid>
       </Container>
